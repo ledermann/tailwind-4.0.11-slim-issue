@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    link href="styles.css" rel="stylesheet"
+
+  body.w-screen.h-screen.flex.flex-col.items-center.justify-center
+    h1.text-3xl.font-bold
+      | TailwindCSS 4.0.11 + Slim
+
+    .text-black[
+      data-controller= ['foo', ('bar' if rand.positive?)].join(' ')
+    ]
+      .bg-green-300
+        | BLACK on GREEN - OK
+
+      .bg-red-300[
+        data-foo= 42
+      ]
+        | Should be BLACK on RED - FAIL
